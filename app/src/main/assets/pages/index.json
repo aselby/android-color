@@ -243,5 +243,215 @@
   "category": "Mandalas",
   "difficulty": 3,
   "tags": "glass circle window cathedral"
+ },
+ {
+  "id": "anime_girl",
+  "title": "Sakura Dreams",
+  "category": "Anime",
+  "difficulty": 3,
+  "tags": "anime girl manga portrait sakura blossom"
+ },
+ {
+  "id": "anime_boy",
+  "title": "Hero Spirit",
+  "category": "Anime",
+  "difficulty": 3,
+  "tags": "anime boy manga hero headband spiky hair"
+ },
+ {
+  "id": "chibi_cat",
+  "title": "Chibi Cat Girl",
+  "category": "Anime",
+  "difficulty": 2,
+  "tags": "chibi cat girl kawaii anime cute neko"
+ },
+ {
+  "id": "magical_girl",
+  "title": "Starlight Magic",
+  "category": "Anime",
+  "difficulty": 3,
+  "tags": "anime magical girl wand stars moon"
+ },
+ {
+  "id": "kawaii_food",
+  "title": "Kawaii Snacks",
+  "category": "Anime",
+  "difficulty": 1,
+  "tags": "kawaii food cute faces sushi boba onigiri"
+ },
+ {
+  "id": "mecha",
+  "title": "Mecha Pilot",
+  "category": "Anime",
+  "difficulty": 3,
+  "tags": "mecha robot anime armor"
+ },
+ {
+  "id": "mountain_lake",
+  "title": "Mountain Lake",
+  "category": "Nature",
+  "difficulty": 3,
+  "tags": "mountains lake pine forest canoe"
+ },
+ {
+  "id": "forest_path",
+  "title": "Forest Path",
+  "category": "Nature",
+  "difficulty": 3,
+  "tags": "forest trees path mushrooms rabbit woods"
+ },
+ {
+  "id": "waterfall",
+  "title": "Hidden Waterfall",
+  "category": "Nature",
+  "difficulty": 3,
+  "tags": "waterfall jungle cliff rainbow pool"
+ },
+ {
+  "id": "beach_sunset",
+  "title": "Beach Sunset",
+  "category": "Nature",
+  "difficulty": 2,
+  "tags": "beach palm sunset sea sailboat shells"
+ },
+ {
+  "id": "flower_meadow",
+  "title": "Flower Meadow",
+  "category": "Nature",
+  "difficulty": 3,
+  "tags": "flowers garden meadow butterfly bee watering can"
+ },
+ {
+  "id": "cherry_blossom",
+  "title": "Cherry Blossom Bridge",
+  "category": "Nature",
+  "difficulty": 3,
+  "tags": "sakura cherry blossom bridge pond fuji japan"
+ },
+ {
+  "id": "autumn_woods",
+  "title": "Autumn Woods",
+  "category": "Nature",
+  "difficulty": 3,
+  "tags": "autumn fall leaves squirrel pumpkin maple"
+ },
+ {
+  "id": "desert",
+  "title": "Desert Noon",
+  "category": "Nature",
+  "difficulty": 2,
+  "tags": "desert cactus mesa sun lizard"
+ },
+ {
+  "id": "intricate_mandala",
+  "title": "Infinite Mandala",
+  "category": "Advanced",
+  "difficulty": 4,
+  "tags": "mandala intricate detailed adult fine"
+ },
+ {
+  "id": "star_lattice",
+  "title": "Star Lattice",
+  "category": "Advanced",
+  "difficulty": 4,
+  "tags": "islamic geometric star pattern tiling moroccan"
+ },
+ {
+  "id": "pattern_owl",
+  "title": "Pattern Owl",
+  "category": "Advanced",
+  "difficulty": 4,
+  "tags": "owl zentangle patterns detailed adult"
+ },
+ {
+  "id": "sea_turtle",
+  "title": "Sea Turtle",
+  "category": "Advanced",
+  "difficulty": 4,
+  "tags": "turtle ocean zentangle shell mandala detailed"
+ },
+ {
+  "id": "royal_peacock",
+  "title": "Royal Peacock",
+  "category": "Advanced",
+  "difficulty": 4,
+  "tags": "peacock feathers tail fan detailed bird"
+ },
+ {
+  "id": "city_lights",
+  "title": "City Lights",
+  "category": "Advanced",
+  "difficulty": 4,
+  "tags": "city skyline buildings night windows bridge river"
+ },
+ {
+  "id": "secret_garden",
+  "title": "Secret Garden",
+  "category": "Advanced",
+  "difficulty": 4,
+  "tags": "flowers dense botanical adult detailed garden"
+ },
+ {
+  "id": "clockwork",
+  "title": "Clockwork",
+  "category": "Advanced",
+  "difficulty": 4,
+  "tags": "gears steampunk clock mechanical cogs"
+ },
+ {
+  "id": "sugar_skull",
+  "title": "Sugar Skull",
+  "category": "Advanced",
+  "difficulty": 4,
+  "tags": "sugar skull day of the dead ornate calavera"
+ },
+ {
+  "id": "coral_reef",
+  "title": "Coral Reef",
+  "category": "Advanced",
+  "difficulty": 4,
+  "tags": "coral reef fish ocean detailed underwater"
+ },
+ {
+  "id": "tree_of_life",
+  "title": "Tree of Life",
+  "category": "Advanced",
+  "difficulty": 4,
+  "tags": "tree of life mandala roots celtic circle"
+ },
+ {
+  "id": "sky_dragon",
+  "title": "Sky Dragon",
+  "category": "Advanced",
+  "difficulty": 4,
+  "tags": "dragon oriental clouds scales mythical"
+ },
+ {
+  "id": "hero_rookie",
+  "title": "Rookie Hero",
+  "category": "Hero Academy",
+  "difficulty": 3,
+  "tags": "hero academy anime student punch action go"
+ },
+ {
+  "id": "hero_duo",
+  "title": "Rival Partners",
+  "category": "Hero Academy",
+  "difficulty": 3,
+  "tags": "hero academy anime students quirk lightning vines uniform"
+ },
+ {
+  "id": "hero_mentor",
+  "title": "Symbol of Hope",
+  "category": "Hero Academy",
+  "difficulty": 3,
+  "tags": "hero academy pro hero muscles cape smile mentor"
+ },
+ {
+  "id": "hero_academy",
+  "title": "Hero Academy Gates",
+  "category": "Hero Academy",
+  "difficulty": 3,
+  "tags": "hero academy school gate robot training flying hero"
  }
 ]

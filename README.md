@@ -4,14 +4,16 @@ A free, ad-free coloring book app for Android. Every palette and tool is unlocke
 
 ## Features
 
-- **35 built-in coloring pages** (mandalas, patterns, nature, animals, food, space, easy pages for kids),
+- **65 built-in coloring pages** (mandalas, patterns, nature scenes, animals, anime characters, hero-academy heroes, food, space, intricate advanced designs, easy pages for kids),
   generated from the SVG art in `tools/gen_pages.py`.
 - **Free coloring**: paint-bucket fill that respects the outlines, a radial "Shine" fill, soft brush,
   pencil and eraser (optionally kept inside the lines), eyedropper, opacity and shade controls,
   28 named palettes plus a full custom color picker and a list of recently used colors.
 - **Color by Numbers**: the same pages with every area numbered, a chip row showing what is left,
   highlights for the current number, hints, and completion tracking.
-- **Import your own pictures**: turn a photo (edge detection) or a scanned line drawing into a page.
+- **Import your own pictures**: turn anime / cartoon art (outline extraction), a photo (edge detection) or a
+  scanned sketch into a page. Pick from the gallery inside the app, or share an image to Color Studio from
+  any other app.
 - Pinch to zoom, undo/redo, automatic progress saving, export to the gallery and share sheet.
 - No ads, no accounts, no network access.
 

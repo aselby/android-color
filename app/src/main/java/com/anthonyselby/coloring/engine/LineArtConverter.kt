@@ -168,6 +168,78 @@ object LineArtConverter {
         return result
     }
 
+    /**
+     * For anime / cartoon art: keeps strokes that are darker than their surroundings (the inked
+     * outlines) and adds strong colour boundaries that have no outline of their own.
+     */
+    fun fromCartoon(src: Bitmap, maxSide: Int = 1500, detail: Float = 0.5f): Bitmap {
+        val b = scaleTo(src, maxSide)
+        val w = b.width
+        val h = b.height
+        val n = w * h
+        val px = IntArray(n)
+        b.getPixels(px, 0, w, 0, 0, w, h)
+        val lum = IntArray(n)
+        luminance(px, lum)
+        val tmp = IntArray(n)
+        val local = IntArray(n)
+        boxBlurH(lum, tmp, w, h, 8)
+        boxBlurV(tmp, local, w, h, 8)
+        val d = detail.coerceIn(0f, 1f)
+        val sensitivity = (24 + (1f - d) * 36).toInt()
+        val dark = BooleanArray(n) { lum[it] < local[it] - sensitivity && lum[it] < 170 }
+        // Colour boundaries: strongest per-channel gradient on lightly smoothed channels.
+        val mag = IntArray(n)
+        var maxMag = 1
+        for (shift in intArrayOf(16, 8, 0)) {
+            val ch = IntArray(n) { (px[it] shr shift) and 0xFF }
+            boxBlurH(ch, tmp, w, h, 1)
+            boxBlurV(tmp, ch, w, h, 1)
+            for (y in 1 until h - 1) {
+                val row = y * w
+                for (x in 1 until w - 1) {
+                    val i = row + x
+                    val gx = -ch[i - w - 1] - 2 * ch[i - 1] - ch[i + w - 1] + ch[i - w + 1] + 2 * ch[i + 1] + ch[i + w + 1]
+                    val gy = -ch[i - w - 1] - 2 * ch[i - w] - ch[i - w + 1] + ch[i + w - 1] + 2 * ch[i + w] + ch[i + w + 1]
+                    val m = sqrt((gx * gx + gy * gy).toDouble()).toInt()
+                    if (m > mag[i]) mag[i] = m
+                    if (m > maxMag) maxMag = m
+                }
+            }
+        }
+        val hist = IntArray(1024)
+        for (m in mag) hist[(m * 1023L / maxMag).toInt()]++
+        val keep = 0.012f + 0.03f * d
+        var acc = 0L
+        var bin = 1023
+        while (bin > 0 && acc < n * keep) { acc += hist[bin]; bin-- }
+        val thr = max(90, (bin.toLong() * maxMag / 1023).toInt())
+        val edge = BooleanArray(n) { mag[it] >= thr && !dark[it] }
+        despeckle(dark, w, h, 8)
+        despeckle(edge, w, h, 14)
+        val out = IntArray(n)
+        for (y in 0 until h) {
+            val row = y * w
+            for (x in 0 until w) {
+                val i = row + x
+                if (dark[i]) {
+                    out[i] = 0xFF shl 24
+                    if (x > 0 && out[i - 1] == 0) out[i - 1] = 0xB4 shl 24
+                    if (x < w - 1 && out[i + 1] == 0) out[i + 1] = 0xB4 shl 24
+                    if (y > 0 && out[i - w] == 0) out[i - w] = 0xB4 shl 24
+                    if (y < h - 1 && out[i + w] == 0) out[i + w] = 0xB4 shl 24
+                } else if (edge[i] && out[i] == 0) {
+                    out[i] = 0xFF shl 24
+                }
+            }
+        }
+        for (x in 0 until w) { out[x] = 0xFF shl 24; out[(h - 1) * w + x] = 0xFF shl 24; if (h > 2) { out[w + x] = 0xFF shl 24; out[(h - 2) * w + x] = 0xFF shl 24 } }
+        for (y in 0 until h) { out[y * w] = 0xFF shl 24; out[y * w + w - 1] = 0xFF shl 24; if (w > 2) { out[y * w + 1] = 0xFF shl 24; out[y * w + w - 2] = 0xFF shl 24 } }
+        val result = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
+        result.setPixels(out, 0, w, 0, 0, w, h)
+        return result
+    }
+
     private fun boxBlurH(src: IntArray, dst: IntArray, w: Int, h: Int, r: Int) {
         val div = 2 * r + 1
         for (y in 0 until h) {

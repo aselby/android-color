@@ -46,7 +46,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-private enum class ImportKind { PHOTO, DRAWING }
+private enum class ImportKind { CARTOON, PHOTO, DRAWING }
 
 /** Turns a picked image into a new coloring page, with a live preview. */
 @OptIn(ExperimentalMaterial3Api::class)
@@ -56,7 +56,7 @@ fun ImportDialog(repo: PageRepository, uri: Uri, onDismiss: () -> Unit, onDone: 
     val scope = rememberCoroutineScope()
     var source by remember { mutableStateOf<Bitmap?>(null) }
     var failed by remember { mutableStateOf(false) }
-    var kind by remember { mutableStateOf(ImportKind.PHOTO) }
+    var kind by remember { mutableStateOf(ImportKind.CARTOON) }
     var detail by remember { mutableFloatStateOf(0.5f) }
     var preview by remember { mutableStateOf<Bitmap?>(null) }
     var title by remember { mutableStateOf("My picture") }
@@ -70,7 +70,11 @@ fun ImportDialog(repo: PageRepository, uri: Uri, onDismiss: () -> Unit, onDone: 
         val s = source ?: return@LaunchedEffect
         busy = true
         preview = withContext(Dispatchers.Default) {
-            if (kind == ImportKind.PHOTO) LineArtConverter.fromPhoto(s, 900, detail) else LineArtConverter.fromDrawing(s, 900)
+            when (kind) {
+                ImportKind.CARTOON -> LineArtConverter.fromCartoon(s, 900, detail)
+                ImportKind.PHOTO -> LineArtConverter.fromPhoto(s, 900, detail)
+                ImportKind.DRAWING -> LineArtConverter.fromDrawing(s, 900)
+            }
         }
         busy = false
     }
@@ -93,17 +97,31 @@ fun ImportDialog(repo: PageRepository, uri: Uri, onDismiss: () -> Unit, onDone: 
                 }
                 SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth()) {
                     SegmentedButton(
+                        selected = kind == ImportKind.CARTOON,
+                        onClick = { kind = ImportKind.CARTOON },
+                        shape = SegmentedButtonDefaults.itemShape(0, 3),
+                    ) { Text("Anime", maxLines = 1) }
+                    SegmentedButton(
                         selected = kind == ImportKind.PHOTO,
                         onClick = { kind = ImportKind.PHOTO },
-                        shape = SegmentedButtonDefaults.itemShape(0, 2),
-                    ) { Text("Photo") }
+                        shape = SegmentedButtonDefaults.itemShape(1, 3),
+                    ) { Text("Photo", maxLines = 1) }
                     SegmentedButton(
                         selected = kind == ImportKind.DRAWING,
                         onClick = { kind = ImportKind.DRAWING },
-                        shape = SegmentedButtonDefaults.itemShape(1, 2),
-                    ) { Text("Line drawing") }
+                        shape = SegmentedButtonDefaults.itemShape(2, 3),
+                    ) { Text("Sketch", maxLines = 1) }
                 }
-                if (kind == ImportKind.PHOTO) {
+                Text(
+                    when (kind) {
+                        ImportKind.CARTOON -> "Best for anime, cartoons and drawings with black outlines."
+                        ImportKind.PHOTO -> "Finds the edges in a photograph."
+                        ImportKind.DRAWING -> "For scanned pencil or ink sketches on white paper."
+                    },
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                if (kind != ImportKind.DRAWING) {
                     Text("Detail", style = MaterialTheme.typography.labelSmall)
                     Slider(value = detail, onValueChange = { detail = it }, valueRange = 0f..1f, modifier = Modifier.height(24.dp))
                 }
@@ -118,7 +136,11 @@ fun ImportDialog(repo: PageRepository, uri: Uri, onDismiss: () -> Unit, onDone: 
                     scope.launch {
                         busy = true
                         val lines = withContext(Dispatchers.Default) {
-                            if (kind == ImportKind.PHOTO) LineArtConverter.fromPhoto(s, 1500, detail) else LineArtConverter.fromDrawing(s, 1800)
+                            when (kind) {
+                                ImportKind.CARTOON -> LineArtConverter.fromCartoon(s, 1600, detail)
+                                ImportKind.PHOTO -> LineArtConverter.fromPhoto(s, 1500, detail)
+                                ImportKind.DRAWING -> LineArtConverter.fromDrawing(s, 1800)
+                            }
                         }
                         val page = withContext(Dispatchers.IO) { repo.importLineArt(lines, title.ifBlank { "My picture" }) }
                         busy = false

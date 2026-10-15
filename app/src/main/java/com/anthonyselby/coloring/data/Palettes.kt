@@ -46,6 +46,8 @@ object Palettes {
         "Mandalas", "Patterns" -> hex("FFF6E5", "E63946", "F4A261", "E9C46A", "2A9D8F", "264653", "8338EC", "FF006E", "3A86FF", "FB5607", "06D6A0", "FFD166", "EF476F", "118AB2", "9B5DE5", "F15BB5")
         "Easy", "Food" -> hex("DFF3FF", "FF595E", "FFCA3A", "8AC926", "1982C4", "6A4C93", "FF924C", "F15BB5", "00BBF9", "FEE440", "9BF6FF", "FFADAD", "CAFFBF", "BDB2FF", "FDFFB6", "A0C4FF")
         "Animals" -> hex("E8F4F8", "F4A261", "E76F51", "2A9D8F", "E9C46A", "8D6E63", "FFB6B9", "5C6BC0", "81C784", "FFD54F", "4DB6AC", "BA68C8", "A1887F", "90CAF9", "F48FB1", "FFF176")
+        "Anime", "Hero Academy" -> hex("DFF1FF", "FFE0BD", "5C3A21", "E63946", "1E4DB7", "FFD166", "2A9D8F", "F8BBD0", "8338EC", "FF924C", "3A86FF", "06D6A0", "FFFFFF", "9C27B0", "FDFFB6", "C77DFF")
+        "Advanced" -> hex("FFF8E7", "E63946", "F4A261", "E9C46A", "2A9D8F", "264653", "8338EC", "FF006E", "3A86FF", "FB5607", "06D6A0", "FFD166", "EF476F", "118AB2", "9B5DE5", "F15BB5")
         else -> hex("F1F3F5", "E63946", "F4A261", "E9C46A", "2A9D8F", "457B9D", "8338EC", "FF006E", "3A86FF", "FB5607", "06D6A0", "FFD166", "EF476F", "118AB2", "9B5DE5", "A8DADC")
     }.toIntArray()
 

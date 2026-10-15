@@ -85,7 +85,13 @@ fun PageRepository.workStatus(page: PageInfo, mode: ColoringMode): WorkStatus = 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(repo: PageRepository, refreshTick: Int, onOpen: (PageInfo, ColoringMode) -> Unit) {
+fun HomeScreen(
+    repo: PageRepository,
+    refreshTick: Int,
+    onOpen: (PageInfo, ColoringMode) -> Unit,
+    externalImport: Uri? = null,
+    onExternalImportHandled: () -> Unit = {},
+) {
     val scope = rememberCoroutineScope()
     var mode by rememberSaveable { mutableStateOf(ColoringMode.FREE) }
     var query by rememberSaveable { mutableStateOf("") }
@@ -106,6 +112,12 @@ fun HomeScreen(repo: PageRepository, refreshTick: Int, onOpen: (PageInfo, Colori
     }
 
     val picker = rememberLauncherForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri -> importUri = uri }
+    LaunchedEffect(externalImport) {
+        if (externalImport != null) {
+            importUri = externalImport
+            onExternalImportHandled()
+        }
+    }
 
     val categories = remember(pages) { listOf("All", "My Work") + pages.map { it.category }.distinct() }
     val filtered = remember(pages, query, category, status) {
