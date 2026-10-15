@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Debug builds render in software: the Android emulator's GPU translation layer crashes on
+     some of this app's drawing, and software rendering keeps emulator testing stable.
+     Release builds use normal hardware acceleration. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <application
+        android:hardwareAccelerated="false"
+        tools:replace="android:hardwareAccelerated" />
+</manifest>

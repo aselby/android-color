@@ -1,0 +1,247 @@
+[
+ {
+  "id": "mandala_bloom",
+  "title": "Blooming Mandala",
+  "category": "Mandalas",
+  "difficulty": 3,
+  "tags": "mandala flower circle"
+ },
+ {
+  "id": "mandala_lace",
+  "title": "Lace Mandala",
+  "category": "Mandalas",
+  "difficulty": 4,
+  "tags": "mandala lace detailed"
+ },
+ {
+  "id": "mandala_star",
+  "title": "Star Mandala",
+  "category": "Mandalas",
+  "difficulty": 3,
+  "tags": "mandala star geometric"
+ },
+ {
+  "id": "mandala_lotus",
+  "title": "Lotus Mandala",
+  "category": "Mandalas",
+  "difficulty": 3,
+  "tags": "mandala lotus petals"
+ },
+ {
+  "id": "kaleidoscope",
+  "title": "Kaleidoscope",
+  "category": "Patterns",
+  "difficulty": 4,
+  "tags": "geometric star overlapping"
+ },
+ {
+  "id": "honeycomb",
+  "title": "Honeycomb & Bees",
+  "category": "Patterns",
+  "difficulty": 2,
+  "tags": "bee hexagon honey"
+ },
+ {
+  "id": "bouquet",
+  "title": "Sunny Bouquet",
+  "category": "Nature",
+  "difficulty": 3,
+  "tags": "flowers vase sunflower daisy fruit"
+ },
+ {
+  "id": "butterfly",
+  "title": "Garden Butterfly",
+  "category": "Animals",
+  "difficulty": 3,
+  "tags": "butterfly insect wings flowers"
+ },
+ {
+  "id": "aquarium",
+  "title": "Under the Sea",
+  "category": "Animals",
+  "difficulty": 3,
+  "tags": "fish ocean sea bubbles"
+ },
+ {
+  "id": "owl",
+  "title": "Night Owl",
+  "category": "Animals",
+  "difficulty": 3,
+  "tags": "owl bird moon stars night"
+ },
+ {
+  "id": "kitten",
+  "title": "Playful Kitten",
+  "category": "Animals",
+  "difficulty": 2,
+  "tags": "cat kitten yarn cute"
+ },
+ {
+  "id": "balloons",
+  "title": "Hot Air Balloons",
+  "category": "Nature",
+  "difficulty": 2,
+  "tags": "balloon sky clouds hills"
+ },
+ {
+  "id": "rocket",
+  "title": "Rocket to the Stars",
+  "category": "Space",
+  "difficulty": 2,
+  "tags": "rocket space planet stars moon"
+ },
+ {
+  "id": "cupcake",
+  "title": "Sweet Cupcake",
+  "category": "Food",
+  "difficulty": 1,
+  "tags": "cupcake dessert sweet cherry"
+ },
+ {
+  "id": "fruit_basket",
+  "title": "Fruit Basket",
+  "category": "Food",
+  "difficulty": 3,
+  "tags": "fruit basket apple grapes banana pear"
+ },
+ {
+  "id": "big_tree",
+  "title": "The Big Tree",
+  "category": "Nature",
+  "difficulty": 2,
+  "tags": "tree landscape sun clouds fence"
+ },
+ {
+  "id": "snowflake",
+  "title": "Snowflake",
+  "category": "Patterns",
+  "difficulty": 3,
+  "tags": "snow winter crystal"
+ },
+ {
+  "id": "paisley",
+  "title": "Paisley Garden",
+  "category": "Patterns",
+  "difficulty": 4,
+  "tags": "paisley boho pattern"
+ },
+ {
+  "id": "hearts",
+  "title": "Hearts & Dots",
+  "category": "Patterns",
+  "difficulty": 1,
+  "tags": "heart love valentine"
+ },
+ {
+  "id": "peacock",
+  "title": "Peacock Feathers",
+  "category": "Patterns",
+  "difficulty": 4,
+  "tags": "peacock feather eye"
+ },
+ {
+  "id": "sunburst",
+  "title": "Sunburst Rings",
+  "category": "Patterns",
+  "difficulty": 3,
+  "tags": "sun rays rings spiral abstract"
+ },
+ {
+  "id": "lotus_pond",
+  "title": "Lotus Pond",
+  "category": "Nature",
+  "difficulty": 3,
+  "tags": "lotus water lily pond"
+ },
+ {
+  "id": "flower_of_life",
+  "title": "Flower of Life",
+  "category": "Mandalas",
+  "difficulty": 2,
+  "tags": "sacred geometry circles"
+ },
+ {
+  "id": "iso_cubes",
+  "title": "Tumbling Blocks",
+  "category": "Patterns",
+  "difficulty": 2,
+  "tags": "cubes isometric geometric"
+ },
+ {
+  "id": "zentangle",
+  "title": "Doodle Tiles",
+  "category": "Patterns",
+  "difficulty": 4,
+  "tags": "zentangle doodle tiles"
+ },
+ {
+  "id": "seashells",
+  "title": "Seashells",
+  "category": "Nature",
+  "difficulty": 3,
+  "tags": "beach shell nautilus starfish"
+ },
+ {
+  "id": "easy_house",
+  "title": "Little House",
+  "category": "Easy",
+  "difficulty": 1,
+  "tags": "house home sun tree kids"
+ },
+ {
+  "id": "easy_car",
+  "title": "Zoom Car",
+  "category": "Easy",
+  "difficulty": 1,
+  "tags": "car vehicle road kids"
+ },
+ {
+  "id": "easy_icecream",
+  "title": "Ice Cream Cone",
+  "category": "Easy",
+  "difficulty": 1,
+  "tags": "ice cream dessert sweet kids"
+ },
+ {
+  "id": "easy_sailboat",
+  "title": "Sailboat",
+  "category": "Easy",
+  "difficulty": 1,
+  "tags": "boat sea sail kids"
+ },
+ {
+  "id": "easy_whale",
+  "title": "Happy Whale",
+  "category": "Easy",
+  "difficulty": 1,
+  "tags": "whale ocean sea kids"
+ },
+ {
+  "id": "easy_dino",
+  "title": "Friendly Dino",
+  "category": "Easy",
+  "difficulty": 1,
+  "tags": "dinosaur dino kids"
+ },
+ {
+  "id": "easy_rainbow",
+  "title": "Rainbow Sky",
+  "category": "Easy",
+  "difficulty": 1,
+  "tags": "rainbow clouds sun kids"
+ },
+ {
+  "id": "stained_glass",
+  "title": "Stained Glass",
+  "category": "Patterns",
+  "difficulty": 2,
+  "tags": "glass window mosaic"
+ },
+ {
+  "id": "rose_window",
+  "title": "Rose Window",
+  "category": "Mandalas",
+  "difficulty": 3,
+  "tags": "glass circle window cathedral"
+ }
+]
